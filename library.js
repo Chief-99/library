@@ -14,3 +14,9 @@ function Book(title, author, pages, readStatus) {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${readOutput}`;
     }
 }
+
+function addBookToLibrary(title, author, pages, readStatus) {
+    let book = new Book(title, author, pages, readStatus);
+    myLibrary.push(book);
+}
+
