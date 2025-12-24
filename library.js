@@ -1,3 +1,5 @@
+const bookWrapper = document.querySelector('.book-wrapper');
+
 const myLibrary = [];
 
 function Book(title, author, pages, readStatus) {
@@ -27,3 +29,28 @@ addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
 addBookToLibrary('Gone Girl', 'Gillian Flynn', 475, true);
 
 myLibrary.forEach(console.log)
+
+myLibrary.forEach((item) => {
+    let book = document.createElement('div');
+    let title = document.createElement('p');
+    let author = document.createElement('p');
+    let pages = document.createElement('p');
+    let readStatus = document.createElement('p');
+    book.classList.add('book-card');
+    title.classList.add('book-title');
+    author.classList.add('author');
+    pages.classList.add('pages');
+    readStatus.classList.add('read-status');
+
+    title.textContent = `Title: ${item.title}`;
+    author.textContent = `Author: ${item.author}`;
+    pages.textContent = `Pages: ${item.pages}`;
+    if (item.readStatus) {
+        readStatus.textContent = 'Has been read';
+    } else {
+        readStatus.textContent = 'Not read yet';
+    }
+
+    book.append(title, author, pages, readStatus);
+    bookWrapper.append(book);
+})

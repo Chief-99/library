@@ -45,3 +45,11 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+
+header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 2rem;
+    background-color: paleturquoise;
+}
