@@ -11,7 +11,7 @@ function Book(title, author, pages, readStatus) {
     this.author = author;
     this.pages = pages;
     this.readStatus = readStatus;
-    this.info = function() {
+    this.info = function () {
         let readOutput = readStatus === true ? 'has been read' : 'not read yet';
         return `${this.title} by ${this.author}, ${this.pages} pages, ${readOutput}`;
     }
@@ -23,14 +23,7 @@ function addBookToLibrary(title, author, pages, readStatus) {
     myLibrary.push(book);
 }
 
-addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
-addBookToLibrary('Take The Risk', 'Ben Carson', 467, true);
-addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
-addBookToLibrary('Gone Girl', 'Gillian Flynn', 475, true);
-
-myLibrary.forEach(console.log)
-
-myLibrary.forEach((item) => {
+function displayBooks(item) {
     let book = document.createElement('div');
     let title = document.createElement('p');
     let author = document.createElement('p');
@@ -53,4 +46,13 @@ myLibrary.forEach((item) => {
 
     book.append(title, author, pages, readStatus);
     bookWrapper.append(book);
-})
+}
+
+addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
+addBookToLibrary('Take The Risk', 'Ben Carson', 467, true);
+addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
+addBookToLibrary('Gone Girl', 'Gillian Flynn', 475, true);
+
+
+
+myLibrary.forEach(displayBooks);
