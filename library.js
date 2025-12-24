@@ -1,6 +1,3 @@
-const bookWrapper = document.querySelector('.book-wrapper');
-console.log(bookWrapper);
-
 const myLibrary = [];
 
 function Book(title, author, pages, readStatus) {
