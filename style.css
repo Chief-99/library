@@ -53,3 +53,18 @@ header {
     padding: 2rem;
     background-color: paleturquoise;
 }
+
+.book-wrapper {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: paleturquoise;
+    padding: 1rem;
+
+}
