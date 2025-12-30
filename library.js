@@ -1,8 +1,11 @@
 const bookWrapper = document.querySelector('.book-wrapper');
 const addButton = document.querySelector('#add-button');
 const bookDialog = document.querySelector('#book-dialog');
+const confirmButton = document.querySelector('#confirm-button');
 
 const myLibrary = [];
+
+addButton.addEventListener('click', () => bookDialog.showModal());
 
 function Book(title, author, pages, readStatus) {
     if (!new.target) {
