@@ -1,4 +1,6 @@
 const bookWrapper = document.querySelector('.book-wrapper');
+const addButton = document.querySelector('#add-button');
+const bookDialog = document.querySelector('#book-dialog');
 
 const myLibrary = [];
 
