@@ -22,7 +22,30 @@
 
         </div>
 
-        <button class="add-button">+</button>
+        <dialog id="book-dialog">
+            <form>
+                <p class="form-title">Please enter the details of your book</p>
+
+                <label for="title">Book title:</label>
+                <input type="text" id="title" name="title">
+
+                <label for="authot">Book author:</label>
+                <input type="text" id="author" name="author">
+
+                <label for="pages">Number of pages:</label>
+                <input type="number" name="pages" id="pages">
+
+                <label for="read_status">Have you read the book?</label>
+                <input type="checkbox" name="read_status" id="read_status">
+
+                <div class="button-container">
+                    <button id="cancel-button" value="cancel">Cancel</button>
+                    <button id="confirm-button" value="default">Confirm</button>
+                </div>
+            </form>
+        </dialog>
+
+        <button id="add-button">+</button>
     </main>
 </body>
 
