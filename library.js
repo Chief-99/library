@@ -9,7 +9,19 @@ const readStatusInput = document.querySelector('#read_status');
 
 const myLibrary = [];
 
-addButton.addEventListener('click', () => bookDialog.showModal());
+
+function userAddBook() {
+    let title = titleInput.value;
+    let author = authorInput.value;
+    let pages = pagesInput.value;
+    if (readStatusInput.checked) {
+        let readStatus = true;
+    } else {
+        let readStatus = false;
+    };
+
+    addBookToLibrary(title, author, pages, readStatus);
+}
 
 function Book(title, author, pages, readStatus) {
     if (!new.target) {
@@ -61,5 +73,8 @@ addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
 addBookToLibrary('Take The Risk', 'Ben Carson', 467, true);
 addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
 addBookToLibrary('Gone Girl', 'Gillian Flynn', 475, true);
+
+addButton.addEventListener('click', () => bookDialog.showModal());
+
 
 myLibrary.forEach(displayBooks);
