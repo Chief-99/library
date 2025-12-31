@@ -84,3 +84,8 @@ header {
   line-height: 0;
   cursor: pointer;
 }
+
+#book-dialog {
+  width: 50%;
+  height: 80%;  
+}

@@ -2,6 +2,10 @@ const bookWrapper = document.querySelector('.book-wrapper');
 const addButton = document.querySelector('#add-button');
 const bookDialog = document.querySelector('#book-dialog');
 const confirmButton = document.querySelector('#confirm-button');
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const pagesInput = document.querySelector('#pages');
+const readStatusInput = document.querySelector('#read_status');
 
 const myLibrary = [];
 
@@ -57,7 +61,5 @@ addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
 addBookToLibrary('Take The Risk', 'Ben Carson', 467, true);
 addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
 addBookToLibrary('Gone Girl', 'Gillian Flynn', 475, true);
-
-
 
 myLibrary.forEach(displayBooks);
