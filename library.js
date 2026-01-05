@@ -6,6 +6,7 @@ const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
 const pagesInput = document.querySelector('#pages');
 const readStatusInput = document.querySelector('#read_status');
+const bookForm = document.getElementById('bookForm');
 
 const myLibrary = [];
 
@@ -15,7 +16,8 @@ confirmButton.addEventListener('click', (event) => {
     bookDialog.close(userAddBook());
     let lastIndex = myLibrary.length - 1;
     displayBooks(myLibrary[lastIndex]);
-    console.log(myLibrary)
+    console.log(myLibrary);
+    bookForm.reset();
 })
 
 function userAddBook() {
