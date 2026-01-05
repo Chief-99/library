@@ -14,8 +14,7 @@ addButton.addEventListener('click', () => bookDialog.showModal());
 confirmButton.addEventListener('click', (event) => {
     event.preventDefault();
     bookDialog.close(userAddBook());
-    let lastIndex = myLibrary.length - 1;
-    displayBooks(myLibrary[lastIndex]);
+    callDisplay();
     console.log(myLibrary);
     bookForm.reset();
 })
@@ -82,10 +81,15 @@ function displayBooks(item) {
     bookWrapper.append(book);
 }
 
+function callDisplay() {
+    bookWrapper.innerHTML = '';
+    myLibrary.forEach(displayBooks);
+}
+
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
 addBookToLibrary('Take The Risk', 'Ben Carson', 467, true);
 addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
 addBookToLibrary('Gone Girl', 'Gillian Flynn', 475, true);
 
 
-myLibrary.forEach(displayBooks);
+callDisplay();
