@@ -7,6 +7,7 @@ const authorInput = document.querySelector('#author');
 const pagesInput = document.querySelector('#pages');
 const readStatusInput = document.querySelector('#read_status');
 const bookForm = document.getElementById('bookForm');
+let deleteButtonsList;
 
 const myLibrary = [];
 
@@ -78,7 +79,10 @@ function displayBooks(item) {
     } else {
         readStatus.textContent = 'Not read yet';
     }
+
     deleteButton.textContent = 'Delete';
+    deleteButton.id = item.id;
+    deleteButton.addEventListener('click', deleteBook);
 
     book.append(title, author, pages, readStatus, deleteButton);
     bookWrapper.append(book);
@@ -87,6 +91,13 @@ function displayBooks(item) {
 function callDisplay() {
     bookWrapper.innerHTML = '';
     myLibrary.forEach(displayBooks);
+}
+
+function deleteBook(event) {
+    let book = myLibrary.find((book) => book.id === event.target.id);
+    let bookIndex = myLibrary.indexOf(book);
+    myLibrary.splice(bookIndex, 1);
+    callDisplay();
 }
 
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
