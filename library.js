@@ -62,11 +62,13 @@ function displayBooks(item) {
     let author = document.createElement('p');
     let pages = document.createElement('p');
     let readStatus = document.createElement('p');
+    let deleteButton = document.createElement('button');
     book.classList.add('book-card');
     title.classList.add('book-title');
     author.classList.add('author');
     pages.classList.add('pages');
     readStatus.classList.add('read-status');
+    deleteButton.classList.add('delete-button');
 
     title.textContent = `Title: ${item.title}`;
     author.textContent = `Author: ${item.author}`;
@@ -76,8 +78,9 @@ function displayBooks(item) {
     } else {
         readStatus.textContent = 'Not read yet';
     }
+    deleteButton.textContent = 'Delete';
 
-    book.append(title, author, pages, readStatus);
+    book.append(title, author, pages, readStatus, deleteButton);
     bookWrapper.append(book);
 }
 
