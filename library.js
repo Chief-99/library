@@ -63,27 +63,31 @@ function displayBooks(item) {
     let author = document.createElement('p');
     let pages = document.createElement('p');
     let readStatus = document.createElement('p');
+    let readCheckbox = document.createElement('input')
     let deleteButton = document.createElement('button');
     book.classList.add('book-card');
     title.classList.add('book-title');
     author.classList.add('author');
     pages.classList.add('pages');
     readStatus.classList.add('read-status');
+    readCheckbox.type = 'checkbox';
     deleteButton.classList.add('delete-button');
 
     title.textContent = `Title: ${item.title}`;
     author.textContent = `Author: ${item.author}`;
     pages.textContent = `Pages: ${item.pages}`;
     if (item.readStatus) {
-        readStatus.textContent = 'Has been read';
+        readCheckbox.checked = true;
     } else {
-        readStatus.textContent = 'Not read yet';
+        readCheckbox.checked = false;
     }
+    readStatus.textContent = 'Completed: ';
 
     deleteButton.textContent = 'Delete';
     deleteButton.id = item.id;
     deleteButton.addEventListener('click', deleteBook);
 
+    readStatus.append(readCheckbox);
     book.append(title, author, pages, readStatus, deleteButton);
     bookWrapper.append(book);
 }
