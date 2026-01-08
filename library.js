@@ -18,7 +18,7 @@ confirmButton.addEventListener('click', (event) => {
     callDisplay();
     console.log(myLibrary);
     bookForm.reset();
-})
+});
 
 function userAddBook() {
     let title = titleInput.value;
@@ -58,14 +58,21 @@ function addBookToLibrary(title, author, pages, readStatus) {
 }
 
 function displayBooks(item) {
-    let book = document.createElement('div');
-    let title = document.createElement('p');
+    let bookContainer = document.createElement('div');
+    let bookCard = document.createElement('div');
+    let frontOfCard = document.createElement('div');
+    let backOfCard = document.createElement('div');
+    let frontTitle = document.createElement('p');
+    let backTitle = document.createElement('p');
     let author = document.createElement('p');
     let pages = document.createElement('p');
     let readStatus = document.createElement('p');
     let readCheckbox = document.createElement('input')
     let deleteButton = document.createElement('button');
-    book.classList.add('book-card');
+    bookContainer.classList.add('book-container');
+    bookCard.classList.add('book-card');
+    frontOfCard.classList.add('front-of-card');
+    backOfCard.classList.add('back-of-card');
     title.classList.add('book-title');
     author.classList.add('author');
     pages.classList.add('pages');
@@ -73,7 +80,8 @@ function displayBooks(item) {
     readCheckbox.type = 'checkbox';
     deleteButton.classList.add('delete-button');
 
-    title.textContent = `Title: ${item.title}`;
+    frontTitle.textContent = item.title;
+    backTitle.textContent = `Title: ${item.title}`;
     author.textContent = `Author: ${item.author}`;
     pages.textContent = `Pages: ${item.pages}`;
     if (item.readStatus) {
@@ -87,9 +95,14 @@ function displayBooks(item) {
     deleteButton.id = item.id;
     deleteButton.addEventListener('click', deleteBook);
 
+    frontOfCard.append(frontTitle);
+    backOfCard.append(backTitle, author, pages, readStatus, deleteButton);
     readStatus.append(readCheckbox);
-    book.append(title, author, pages, readStatus, deleteButton);
-    bookWrapper.append(book);
+    bookCard.append(frontOfCard, backOfCard);
+    bookContainer.append(bookCard);
+    bookWrapper.append(bookContainer);
+
+    bookContainer.addEventListener('click', () => bookCard.classList.toggle('book-card-flip'));
 }
 
 function callDisplay() {

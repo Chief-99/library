@@ -1,7 +1,7 @@
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
+:root {
+    --primary-colour: rgb(100, 142, 210);
+    --accent-colour: rgb(67, 116, 196);
+}
 
 *,
 *::before,
@@ -70,11 +70,12 @@ h6 {
 
 body {
     height: 100vh;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .main-content {
     height: 100%;
-    border: 2px solid blue;
 }
 
 header {
@@ -82,25 +83,67 @@ header {
     justify-content: center;
     align-content: center;
     padding: 2rem;
-    background-color: paleturquoise;
+    background-color: var(--primary-colour);
 }
 
 .book-wrapper {
     height: 100%;
-    border: 2px solid red;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-    grid-auto-rows: 12rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-rows: 20rem;
     gap: 2rem;
     padding: 2rem;
 }
 
+.book-container {
+    perspective: 1000px;
+}
+
 .book-card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1500ms;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.book-card-flip {
+    transform: rotateY(180deg);
+}
+
+.front-of-card,
+.back-of-card {
+    height: 100%;
+    width: 100%;
+    box-shadow: rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: var(--primary-colour);
+}
+
+.front-of-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back-of-card {
+    transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    background-color: paleturquoise;
-    padding: 1rem;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.delete-button {
+    border: none;
+    background-color: var(--accent-colour);
+    color: white;
+    padding: 0.45rem;
+    cursor: pointer;
 }
 
 #add-button {
@@ -109,7 +152,7 @@ header {
     bottom: 2rem;
 
     border: none;
-    background-color: paleturquoise;
+    background-color: var(--primary-colour);
     padding: 0;
     font-size: 4rem;
     font-weight: 600;
