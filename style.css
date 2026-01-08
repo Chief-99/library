@@ -128,6 +128,7 @@ header {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: transform 150ms ease-in;
 }
 
 .back-of-card {
@@ -136,6 +137,10 @@ header {
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem;
+}
+
+.front-of-card:hover {
+    transform: scale(1.1);
 }
 
 .delete-button {
