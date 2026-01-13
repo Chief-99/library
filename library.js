@@ -33,6 +33,11 @@ function userAddBook() {
 
     console.log(title, author);
 
+    if (!title || !author || !pages) {
+        alert('Please enter the required details in order to add a book.')
+        return;
+    }
+
     addBookToLibrary(title, author, pages, readStatus);
 }
 
