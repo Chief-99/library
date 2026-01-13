@@ -180,6 +180,17 @@ header {
 }
 
 #book-dialog {
-    width: 50%;
+    padding: 2rem;
     height: 80%;
+    font-size: 1.5rem;
+}
+
+#book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#book-form > label > input:not([type='checkbox']) {
+    width: 100%;
 }
