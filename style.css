@@ -1,6 +1,7 @@
 :root {
     --primary-colour: rgb(100, 142, 210);
     --accent-colour: rgb(67, 116, 196);
+    --secondary-colour: rgb(231, 239, 253);
 }
 
 *,
@@ -70,8 +71,9 @@ h6 {
 
 body {
     height: 100vh;
-    color: white;
+    color: var(--secondary-colour);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: var(--secondary-colour);
 }
 
 .main-content {
@@ -128,7 +130,7 @@ header {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: transform 250ms;
+    transition: 250ms;
 }
 
 .back-of-card {
@@ -141,12 +143,13 @@ header {
 
 .front-of-card:hover {
     transform: scale(1.08);
+    background-color: var(--accent-colour);
 }
 
 .delete-button {
     border: none;
     background-color: var(--accent-colour);
-    color: white;
+    color: var(--secondary-colour);
     padding: 0.45rem;
     cursor: pointer;
 }
@@ -166,6 +169,14 @@ header {
     height: 4rem;
     line-height: 0;
     cursor: pointer;
+    color: var(--secondary-colour);
+    transition: 250ms;
+}
+
+#add-button:hover {
+    border-radius: 1rem;
+    color: var(--primary-colour);
+    background-color: var(--secondary-colour);
 }
 
 #book-dialog {
