@@ -15,7 +15,7 @@ addButton.addEventListener('click', () => bookDialog.showModal());
 confirmButton.addEventListener('click', (event) => {
     event.preventDefault();
     bookDialog.close(userAddBook());
-    callDisplay();
+    displayBooks(myLibrary[myLibrary.length - 1]);
     console.log(myLibrary);
     bookForm.reset();
 });
@@ -91,6 +91,7 @@ function displayBooks(item) {
     }
     readStatus.textContent = 'Completed: ';
 
+    bookContainer.dataset.id = item.id;
     deleteButton.textContent = 'Delete';
     deleteButton.id = item.id;
     deleteButton.addEventListener('click', deleteBook);
@@ -113,8 +114,9 @@ function callDisplay() {
 function deleteBook(event) {
     let book = myLibrary.find((book) => book.id === event.target.id);
     let bookIndex = myLibrary.indexOf(book);
+    let domBook = document.querySelector(`[data-id="${event.target.id}"]`)
     myLibrary.splice(bookIndex, 1);
-    callDisplay();
+    bookWrapper.removeChild(domBook);
 }
 
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
