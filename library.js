@@ -124,15 +124,8 @@ function deleteBook(event) {
     bookWrapper.removeChild(domBook);
 }
 
-addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
 addBookToLibrary('Take The Risk', 'Ben Carson', 467, true);
 addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
-addBookToLibrary('Gone Girl', 'Gillian Flynn', 475, true);
-addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
-addBookToLibrary('Take The Risk', 'Ben Carson', 467, true);
-addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
-addBookToLibrary('Gone Girl', 'Gillian Flynn', 475, true);
-
 
 
 callDisplay();
