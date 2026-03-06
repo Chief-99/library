@@ -108,6 +108,7 @@ function displayBooks(item) {
     bookWrapper.append(bookContainer);
 
     bookContainer.addEventListener('click', () => bookCard.classList.toggle('book-card-flip'));
+    readCheckbox.addEventListener('click', (e) => e.stopPropagation());
 }
 
 function callDisplay() {
