@@ -126,6 +126,8 @@ function deleteBook(event) {
 
 addBookToLibrary('Take The Risk', 'Ben Carson', 467, true);
 addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
+addBookToLibrary('Take The Risk', 'Ben Carson', 467, true);
+addBookToLibrary('Bad Science', 'Ben Goldacre', 370, true);
 
 
 callDisplay();
